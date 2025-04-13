@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator-header">
+            <h1>Scientific Calculator</h1>
+            <p>High-performance calculator for complex computations</p>
+        </div>
+        
+        <div class="calculator">
+            <div class="display">
+                <div class="previous-operand" id="previous-operand"></div>
+                <div class="current-operand" id="current-operand">0</div>
+            </div>
+            
+            <div class="buttons-grid">
+                <button class="span-2" data-action="clear">AC</button>
+                <button data-action="delete">DEL</button>
+                <button data-operation="^">^</button>
+                
+                <button data-number="7">7</button>
+                <button data-number="8">8</button>
+                <button data-number="9">9</button>
+                <button data-operation="÷">÷</button>
+                
+                <button data-number="4">4</button>
+                <button data-number="5">5</button>
+                <button data-number="6">6</button>
+                <button data-operation="×">×</button>
+                
+                <button data-number="1">1</button>
+                <button data-number="2">2</button>
+                <button data-number="3">3</button>
+                <button data-operation="-">-</button>
+                
+                <button data-number="0">0</button>
+                <button data-number=".">.</button>
+                <button data-action="calculate">=</button>
+                <button data-operation="+">+</button>
+            </div>
+            
+            <div class="scientific-buttons">
+                <button data-operation="sin(">sin</button>
+                <button data-operation="cos(">cos</button>
+                <button data-operation="tan(">tan</button>
+                <button data-operation="√(">√</button>
+                <button data-operation="ln(">ln</button>
+                
+                <button data-operation="asin(">sin⁻¹</button>
+                <button data-operation="acos(">cos⁻¹</button>
+                <button data-operation="atan(">tan⁻¹</button>
+                <button data-operation="log(">log</button>
+                <button data-operation="fact(">n!</button>
+                
+                <button data-operation="π">π</button>
+                <button data-operation="e">e</button>
+                <button data-operation="(">(</button>
+                <button data-operation=")">)</button>
+                <button data-operation="abs(">|x|</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

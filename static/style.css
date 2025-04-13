@@ -1,0 +1,143 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.calculator-header {
+    background: var(--dark-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.calculator-header h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.calculator-header p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.display {
+    padding: 20px;
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.previous-operand {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+    height: 24px;
+    overflow: hidden;
+}
+
+.current-operand {
+    color: var(--dark-color);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.scientific-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 0 20px 20px 20px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button[data-operation] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+button[data-action="calculate"] {
+    background-color: var(--success-color);
+    color: white;
+}
+
+button[data-action="clear"] {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+button[data-action="delete"] {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+@media (max-width: 500px) {
+    .scientific-buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .calculator-container {
+        border-radius: 10px;
+    }
+}
